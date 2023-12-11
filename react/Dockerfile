@@ -9,6 +9,7 @@ COPY ./profile.d /etc/profile.d
 # 開発環境資材とプロジェクトの資材は分ける
 
 # チュートリアルを行いたい場合は、以下のコメントを解除しdevcontainerに接続する
-# RUN git clone https://github.com/WeWorku/react-tutorial.git \
-#   && npm install \
-#   && npm start
+RUN git clone https://github.com/WeWorku/react-tutorial.git /usr/src/app/ \
+  && cd ./tutorial-tic-tac-toe \
+  && npm install 
+#  && npm start  # <- これするとNodeサーバーが上がりdevcontainerが一生起動待ちになる
