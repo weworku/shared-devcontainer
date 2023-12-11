@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./reactApp:/usr/src/app/reactApp # ローカルをコンテナ内にマウント
+      - ./workspace:/usr/src/app # ローカルをコンテナ内にマウント
     # command: sh -c "cd react-sample && yarn start"
     ports:
       - "3000:3000"
