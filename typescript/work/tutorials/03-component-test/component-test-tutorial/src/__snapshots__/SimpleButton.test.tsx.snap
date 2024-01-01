@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleButton 描画されてすぐはOFFと表示されている 1`] = `
+<div>
+  <button
+    class="SimpleButton"
+  >
+    OFF
+  </button>
+</div>
+`;
