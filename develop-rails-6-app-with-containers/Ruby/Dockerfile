@@ -1,22 +1,17 @@
-FROM ruby:3.1.4-alpine3.19
+FROM ruby:3.1.4-bookworm
 # rails6 が ruby3.1まで対応していないので、ruby3.1を指定する
 
-RUN set -x \
-  && apk update \
-  && apk upgrade \
-  && apk add git 
-
-# bundle install で sqlite3 の gem がインストールされる 
-RUN apk add --update --no-cache \
-  build-base \
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  libpq-dev \
   nodejs \
+  npm \
   yarn \
-  tzdata \
-  postgresql-dev \
-  sqlite-dev \
-  && gem update --system \
-  && gem install bundler:2.5.4 \ 
-  && gem install rails:6.1.7.3 
+  && rm -rf /var/lib/apt/lists/* \
+  && npm install -g yarn \
+  && gem install rails -v 6.1.7.6 \
+  && gem install bundler:2.2.28 \
+  && gem install sqlite3
 
 WORKDIR /usr/src/app
 COPY ./profile.d /etc/profile.d
