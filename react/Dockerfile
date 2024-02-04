@@ -1,8 +1,10 @@
-FROM node:21-alpine3.18
+#FROM node:21-alpine3.18
+FROM node:21-slim
 RUN set -x \
-  && apk update \
-  && apk upgrade \
-  && apk add git
+  && apt update \
+  && apt upgrade -y \
+  && apt install -y git
+ENV LESSCHARSET=utf-8
 WORKDIR /usr/src/app
 COPY ./profile.d /etc/profile.d
 # git clone で資材をここで取得
