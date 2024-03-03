@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
   && gem install sqlite3
 
 WORKDIR /usr/src/app
-COPY ./profile.d /etc/profile.d
+# COPY ./profile.d /etc/profile.d
 # git clone で資材をここで取得
 # 開発環境資材とプロジェクトの資材は分ける
 
