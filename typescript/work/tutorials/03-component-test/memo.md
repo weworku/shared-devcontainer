@@ -1,1 +1,0 @@
-https://typescriptbook.jp/tutorials/component-test
