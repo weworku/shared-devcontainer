@@ -9,5 +9,6 @@ services:
     # command: sh -c "cd react-sample && yarn start"
     ports:
       - "3000:3000"
-    stdin_open: true 
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    
     
