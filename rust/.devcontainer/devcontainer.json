@@ -1,0 +1,26 @@
+{
+	"name": "Existing Docker Compose (Extend)",
+	"dockerComposeFile": [
+		"../compose.yml"
+	],
+	"service": "dev",
+	"workspaceFolder": "/usr/src/app",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rust-lang.rust-analyzer",
+				"fill-labs.dependi",
+				"tamasfe.even-better-toml",
+				"vadimcn.vscode-lldb",
+				"GitHub.copilot-chat"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"rust-analyzer.checkOnSave.command": "clippy",
+				"rust-analyzer.procMacro.enable": true,
+				"terminal.integrated.shell.linux": "/bin/ash"
+			}
+		}
+	},
+	"remoteUser": "dev"
+}
