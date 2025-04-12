@@ -19,6 +19,7 @@ RUN set -x \
 
 COPY ./profile.d /etc/profile.d
 WORKDIR /usr/src/app
+COPY ./README.md /usr/src/README.md
 
 USER rails
 
