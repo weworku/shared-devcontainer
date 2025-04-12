@@ -1,0 +1,39 @@
+{
+    "name": "rails-8-dood",
+    "dockerComposeFile": [
+        "../compose.yml"
+    ],
+    "service": "dev",
+    "workspaceFolder": "/usr/src/app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Github.vscode-pull-request-github",
+                "rebornix.Ruby",
+                "Shopify.ruby-lsp",
+                "castwide.solargraph",
+                "bung87.rails",
+                "aliariff.vscode-erb-beautify",
+                "kaiwood.endwise",
+                "connorshea.vscode-ruby-test-adapter"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "[ruby]": {
+                    "editor.defaultFormatter": "Shopify.ruby-lsp",
+                    "editor.formatOnSave": true
+                },
+                "[erb]": {
+                    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+                    "editor.tabSize": 2
+                },
+                "rubyLsp.rubyVersionManager": "rbenv",
+                "rubyLsp.enableExperimentalFeatures": true,
+                "rubyLsp.diagnostics.enable": true,
+                "rubyLsp.formatter": "rubocop",
+                "ruby.testExplorer.useBundler": true,
+                "rails.schemaRefreshPattern": "db/schema.rb"
+            }
+        }
+    }
+}
