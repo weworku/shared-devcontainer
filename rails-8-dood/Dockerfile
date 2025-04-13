@@ -22,8 +22,11 @@ RUN set -x \
   && rm -rf /var/lib/apt/lists/* \
   && gem install rails -v 8 \
   && gem install pg \
-  && gem install --development rubocop \
-  && useradd -m -s /bin/bash -G sudo -u 1000 rails
+  && gem install --development rubocop
+
+RUN set -x \
+  && groupadd -g 998 docker \
+  && useradd -m -s /bin/bash -G docker -u 1000 rails
 
 COPY ./profile.d /etc/profile.d
 WORKDIR /usr/src/app
