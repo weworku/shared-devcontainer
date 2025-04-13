@@ -31,4 +31,4 @@ COPY ./README.md /usr/src/README.md
 
 USER rails
 
-CMD ["/bin/bash", "-l"]
+CMD ["sleep", "infinity"]
