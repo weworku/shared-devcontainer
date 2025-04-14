@@ -11,6 +11,7 @@ RUN set -x \
     git \
     vim \
     jq \
+    htop \
     ca-certificates \
     gnupg \
   && install -m 0755 -d /etc/apt/keyrings \
@@ -27,6 +28,10 @@ RUN set -x \
 RUN set -x \
   && groupadd -g 998 docker \
   && useradd -m -s /bin/bash -G docker -u 1000 rails
+ENV BUNDLE_PATH=/home/rails/.bundle
+ENV BUNDLE_APP_CONFIG=/home/rails/.bundle
+ENV BUNDLE_BIN=/home/rails/.bundle/bin
+ENV PATH=$BUNDLE_BIN:$PATH
 
 COPY ./profile.d /etc/profile.d
 WORKDIR /usr/src/app
