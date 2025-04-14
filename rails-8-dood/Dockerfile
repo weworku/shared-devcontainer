@@ -6,6 +6,7 @@ RUN set -x \
     build-essential \
     libsqlite3-dev \
     libpq-dev \
+    libyaml-dev \
     tzdata \
     curl \
     git \
@@ -28,14 +29,14 @@ RUN set -x \
 RUN set -x \
   && groupadd -g 998 docker \
   && useradd -m -s /bin/bash -G docker -u 1000 rails
-ENV BUNDLE_PATH=/home/rails/.bundle
-ENV BUNDLE_APP_CONFIG=/home/rails/.bundle
-ENV BUNDLE_BIN=/home/rails/.bundle/bin
-ENV PATH=$BUNDLE_BIN:$PATH
 
 COPY ./profile.d /etc/profile.d
 WORKDIR /usr/src/app
 COPY ./README.md /usr/src/README.md
+ENV BUNDLE_PATH=/usr/src/app/.bundle
+ENV BUNDLE_APP_CONFIG=/usr/src/app/.bundle
+ENV BUNDLE_BIN=/usr/src/app/.bundle/bin
+ENV PATH=$BUNDLE_BIN:$PATH
 
 USER rails
 
