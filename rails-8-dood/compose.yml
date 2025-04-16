@@ -6,3 +6,4 @@ services:
     volumes:
       - ./work:/usr/src/app # ローカルをコンテナ内にマウント
     command: sleep infinity
+    network_mode: host
