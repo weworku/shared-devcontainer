@@ -1,8 +1,8 @@
-FROM php:alpine
+FROM php:latest
 RUN set -x \
-  && apk update --no-cache \
-  && apk upgrade --no-cache \
-  && apk add --no-cache git less vim curl musl-dev gcc make \
+  && apt-get update \
+  && apt-get upgrade -y \
+  && apt-get install -y git less vim curl zip unzip wget build-essential apt-utils \
   && wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet \
   && mv composer.phar /usr/local/bin/composer \
   && composer global require laravel/installer \
