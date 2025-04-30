@@ -51,7 +51,14 @@
 				"esbenp.prettier-vscode",
 				"formulahendry.code-runner",
 				"onecentlin.laravel-blade"
-			]
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"php.validate.enable": true,
+				"php.validate.executablePath": "/usr/local/bin/php",
+				"php.validate.run": "onType"
+			}
 		}
 	}
 
