@@ -1,3 +1,6 @@
 [submodule "shared-devcon-react"]
 	path = shared-devcon-react
 	url = https://github.com/weworku/shared-devcon-react.git
+[submodule "shared-devcon-rust"]
+	path = shared-devcon-rust
+	url = https://github.com/weworku/shared-devcon-rust.git
